@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+<!-- Фрагмент для вставки в block content для страницы about-->
+<!-- 
+Если добавите много текста для описния и footer будет "налазить" поверх текста,
+то уберите со страницы about вставку стиля для footer-a, и его отпустит"
+-->
+
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block css %}
+    {<link rel="stylesheet" href="{% static 'deps/css/my_footer_css.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="my-5 pt-5 px-2 pb-2 bg-white custom-shadow rounded">
+    <h2 class="m-2"><strong>{{ content }}</strong></h2>
+    <p class="m-2" style="font-size: 1.2rem;">{{ text_on_page }}</p>
+</div>
+{% endblock %}
+
+ {% block footer %}
+    <footer class="py-4 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">footer info</p>
+        </div>
+    </footer>
+{% endblock %}
+
+
