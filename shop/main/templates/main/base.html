@@ -88,8 +88,10 @@
                     </button>
                     <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
                         {%  tag_category as category %}
-                        {% for li in category %}
-                            <li><a class="dropdown-item text-white" href="{% url 'catalog:index' %}">{{ li.name }}</a></li>
+                        {% for cat in category %}
+                            <li>
+                                <a class="dropdown-item text-white" href="{% url 'catalog:index' cat.slug %}">{{ cat.name }}</a>
+                            </li>
                         {% endfor %}
                     </ul>
                 </div>
