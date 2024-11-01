@@ -8,6 +8,8 @@ class Category(models.Model):
     class Meta:
         ordering = ['name']
         # db_table = 'category'  # Меняется название таблицы В БД
+        # verbose_name = 'category'
+        # verbose_name_plural = 'categories'
 
     def __str__(self):
         return self.name
